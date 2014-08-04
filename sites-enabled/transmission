@@ -1,0 +1,21 @@
+server {
+    listen 80;
+    server_name trans;
+
+    location / {
+        proxy_pass  http://localhost:9091/;
+    }
+}
+
+server {
+    listen 80;
+    server_name dl;
+
+    location / {
+        root /dl/;
+        index index.html;
+        autoindex on;
+        auth_basic "Restricted";
+        auth_basic_user_file /.htpasswd;
+    }
+}
