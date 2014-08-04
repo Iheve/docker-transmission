@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name trans;
+    server_name transmission_server_name;
 
     location / {
         proxy_pass  http://localhost:9091/;
@@ -9,7 +9,7 @@ server {
 
 server {
     listen 80;
-    server_name dl;
+    server_name file_server_name;
 
     location / {
         root /dl/;

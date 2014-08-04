@@ -32,4 +32,6 @@ ADD .htpasswd /
 #ADD id_rsa.pub /root/.ssh/
 RUN echo "root:changeme" | chpasswd
 
-CMD ["/usr/bin/supervisord"]
+ADD entry.sh /root/entry.sh
+#CMD ["/usr/bin/supervisord"]
+CMD ["/root/entry.sh"]
