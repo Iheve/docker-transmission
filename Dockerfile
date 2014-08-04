@@ -20,6 +20,7 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 #Configure transmission
 ADD settings.json /etc/transmission-daemon/
+RUN mkdir -p /dl
 
 #Configure nginx
 ADD sites-enabled/ /etc/nginx/sites-enabled/
